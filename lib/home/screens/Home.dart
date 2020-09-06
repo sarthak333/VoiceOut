@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      color: Colors.white,
+      color: white,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,10 +30,10 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Buzzing stories",
+                  "Hi, Sarthak!",
                   style: GoogleFonts.montserrat(
-                    fontSize: 26,
-                    // fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 CircleAvatar(
@@ -50,18 +50,22 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                padding: const EdgeInsets.only(
+                  left: 32.0,
+                  right: 32.0,
+                  bottom: 2,
+                ),
                 child: Row(
                   children: [
                     Padding(
                       padding: EdgeInsets.only(right: 16),
                       child: Text(
                         "Category1",
-                        style: GoogleFonts.alegreyaSansSc(
+                        style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
-                            fontSize: 14,
-                            // fontWeight: FontWeight.bold,
-                            color: blueMd,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: black,
                           ),
                         ),
                       ),
@@ -70,10 +74,10 @@ class _HomeState extends State<Home> {
                       padding: EdgeInsets.only(right: 16),
                       child: Text(
                         "Category2",
-                        style: GoogleFonts.quicksand(
+                        style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
-                            fontSize: 12,
-                            // fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
                             color: greyDark,
                           ),
                         ),
@@ -83,10 +87,10 @@ class _HomeState extends State<Home> {
                       padding: EdgeInsets.only(right: 16),
                       child: Text(
                         "Category3",
-                        style: GoogleFonts.quicksand(
+                        style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
-                            fontSize: 12,
-                            // fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
                             color: greyDark,
                           ),
                         ),
@@ -115,17 +119,7 @@ class _HomeState extends State<Home> {
               ),
             ],
           ),
-          Container(
-            height: 100,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              color: blueMd,
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(20),
-                topLeft: Radius.circular(20),
-              ),
-            ),
-          ),
+          Container(),
         ],
       ),
     );

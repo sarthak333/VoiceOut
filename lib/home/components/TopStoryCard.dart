@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:voiceout/global/screens/constants.dart';
+import 'dart:math';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class TopStoryCard extends StatefulWidget {
@@ -16,82 +17,108 @@ class _TopStoryCardState extends State<TopStoryCard> {
       padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 20),
       child: Container(
         height: MediaQuery.of(context).size.height - 350,
-        width: 290,
+        width: MediaQuery.of(context).size.width * 0.8,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: blueMd.withOpacity(0.1),
-              spreadRadius: 5,
-              blurRadius: 7,
+              color: Colors.blueGrey.withOpacity(0.1),
+              spreadRadius: 3,
+              blurRadius: 20,
               offset: Offset(0, 0), // changes position of shadow
             ),
           ],
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Container(
-            height: MediaQuery.of(context).size.height - 350,
-            width: 290,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: CustomScrollView(
-              slivers: <Widget>[
-                SliverAppBar(
-                  toolbarHeight: 0,
-                  backgroundColor: darkBlue,
-                  expandedHeight:
-                      (MediaQuery.of(context).size.height - 350) / 1.5,
-                  flexibleSpace: FlexibleSpaceBar(
-                    background: Image.asset(
-                      'lib/assets/random1.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                SliverFixedExtentList(
-                  itemExtent: MediaQuery.of(context).size.height - 350,
-                  delegate: SliverChildListDelegate(
-                    [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 20,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 0),
+            child: Container(
+              height: MediaQuery.of(context).size.height - 350,
+              width: MediaQuery.of(context).size.width * 0.75,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Material(
+                child: InkWell(
+                  onTap: () {},
+                  splashColor: blueMdLight,
+                  child: CustomScrollView(
+                    slivers: <Widget>[
+                      SliverAppBar(
+                        toolbarHeight: 0,
+                        backgroundColor: darkBlue,
+                        expandedHeight:
+                            (MediaQuery.of(context).size.height - 350) / 1.5,
+                        flexibleSpace: FlexibleSpaceBar(
+                          background: Image.asset(
+                            'lib/assets/random2.jpg',
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                        child: Column(
-                          children: [
-                            Text(
-                              "Lorem ipsum dolor sit amet lorem ipsum",
-                              style: GoogleFonts.arvo(
-                                textStyle: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: blueLg,
-                                ),
+                      ),
+                      SliverFixedExtentList(
+                        itemExtent: MediaQuery.of(context).size.height - 330,
+                        delegate: SliverChildListDelegate(
+                          [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 21,
+                                vertical: 32,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Column(
+                                    children: [
+                                      Text(
+                                        "Lorem ipsum dolor sit amet lorem ipsum",
+                                        style: GoogleFonts.arvo(
+                                          textStyle: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w600,
+                                            color: blueLg,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 16.0),
+                                        child: Text(
+                                          "Pellentesque ultrices feugiat pharetra. In vitae metus ut mauris lacinia semper. In fermentum ipsum ante, quis rhoncus nisi placerat ut. Morbi et est venenatis, ullamcorper lacus ut, pulvinar augue. Nunc est elit, bibendum eget egestas nec, porttitor nec enim. Quisque quis dolor ac sapien pellentesque volutpat et ut ligula.",
+                                          style: GoogleFonts.montserrat(
+                                            textStyle: TextStyle(
+                                              color: contentText,
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      "Tap to continue reading",
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          color: accentColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: Text(
-                                "Pellentesque ultrices feugiat pharetra. In vitae metus ut mauris lacinia semper. In fermentum ipsum ante, quis rhoncus nisi placerat ut. Morbi et est venenatis, ullamcorper lacus ut, pulvinar augue. Nunc est elit, bibendum eget egestas nec, porttitor nec enim. Quisque quis dolor ac sapien pellentesque volutpat et ut ligula.",
-                                style: GoogleFonts.montserrat(
-                                  textStyle: TextStyle(
-                                      // fontSize: 18,
-                                      color: contentText
-                                      // fontWeight: FontWeight.w600,
-                                      ),
-                                ),
-                              ),
-                            )
                           ],
                         ),
                       ),
                     ],
                   ),
                 ),
-              ],
+              ),
             ),
           ),
         ),

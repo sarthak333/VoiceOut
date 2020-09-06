@@ -33,7 +33,9 @@ dependencies:
   flutter_svg: ^0.18.1
   introduction_screen: ^1.0.9
   sliding_up_panel: ^1.0.2
-
+  curved_navigation_bar: ^0.3.3
+  flutter_vector_icons: ^0.2.1
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

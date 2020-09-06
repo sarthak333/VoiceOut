@@ -31,9 +31,18 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: {
-        '/': (context) => GlobalWrapper(child: Splash()),
-        '/Onboarding': (context) => GlobalWrapper(child: Onboarding()),
-        '/Home': (context) => GlobalWrapper(child: Home()),
+        '/Home': (context) => GlobalWrapper(
+              child: Splash(),
+              displayBottomBar: false,
+            ),
+        '/Onboarding': (context) => GlobalWrapper(
+              child: Onboarding(),
+              displayBottomBar: false,
+            ),
+        '/': (context) => GlobalWrapper(
+              child: Home(),
+              displayBottomBar: true,
+            ),
       },
     );
   }

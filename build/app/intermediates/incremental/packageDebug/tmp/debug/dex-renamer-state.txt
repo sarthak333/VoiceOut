@@ -1,4 +1,0 @@
-#Sun Sep 06 17:40:12 IST 2020
-base.0=/home/sarthak/projects/flutter/voiceout/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
