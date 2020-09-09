@@ -1,1 +1,7 @@
 build/
+.flutter-plugins-dependencies
+.dart_tool/
+.dart_tool/flutter_build/35b1442e4a943c5b62773f33c5db8b8b/.filecache
+.dart_tool/flutter_build/35b1442e4a943c5b62773f33c5db8b8b/app.dill
+.dart_tool/flutter_build/35b1442e4a943c5b62773f33c5db8b8b/kernel_snapshot.d
+.dart_tool/flutter_build/35b1442e4a943c5b62773f33c5db8b8b/kernel_snapshot.stamp

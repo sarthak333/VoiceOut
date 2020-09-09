@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:voiceout/global/screens/GlobalWrapper.dart';
+import 'package:voiceout/home/components/StoryDetail.dart';
 import 'package:voiceout/home/screens/Home.dart';
+import 'package:voiceout/home/screens/ScaffoldHome.dart';
 import 'package:voiceout/onboarding/Onboarding.dart';
 import 'package:voiceout/splash/Splash.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -33,50 +35,19 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-
-      home: Scaffold(
-        bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: white,
-          color: blueMd,
-          height: 60,
-          index: 1,
-          items: <Widget>[
-            Icon(
-              AntDesign.solution1,
-              size: 24,
-              color: white,
-            ),
-            Icon(
-              AntDesign.home,
-              size: 24,
-              color: white,
-            ),
-            Icon(
-              AntDesign.setting,
-              size: 24,
-              color: white,
-            ),
-          ],
-          onTap: (index) {
-            //Handle button tap
-          },
-        ),
-        body: SafeArea(
-          child: Home(),
-        ),
-      ),
+      home: ScaffoldHome(),
       routes: {
         '/Splash': (context) => GlobalWrapper(
               child: Splash(),
-              displayBottomBar: false,
             ),
         '/Onboarding': (context) => GlobalWrapper(
               child: Onboarding(),
-              displayBottomBar: false,
             ),
         '/Home': (context) => GlobalWrapper(
               child: Home(),
-              displayBottomBar: true,
+            ),
+        '/StoryDetails': (context) => GlobalWrapper(
+              child: StoryDetail(),
             ),
       },
     );

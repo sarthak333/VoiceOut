@@ -108,9 +108,9 @@ class _HomeState extends State<Home> {
                     Container(
                       width: 20,
                     ),
-                    TopStoryCard(),
-                    TopStoryCard(),
-                    TopStoryCard(),
+                    TopStoryCard(index: 1),
+                    TopStoryCard(index: 2),
+                    TopStoryCard(index: 3),
                     Container(
                       width: 20,
                     ),

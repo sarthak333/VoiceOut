@@ -6,13 +6,12 @@ import 'dart:math';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:voiceout/global/widgets/Animate.dart';
 import 'package:voiceout/home/components/StoryDetail.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-class TopStoryCard extends StatefulWidget {
-  @override
-  _TopStoryCardState createState() => _TopStoryCardState();
-}
+class TopStoryCard extends StatelessWidget {
+  final index;
 
-class _TopStoryCardState extends State<TopStoryCard> {
+  TopStoryCard({this.index});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -45,7 +44,9 @@ class _TopStoryCardState extends State<TopStoryCard> {
               child: Material(
                 color: blueBg,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, "/StoryDetails");
+                  },
                   splashColor: blueMdLight,
                   child: CustomScrollView(
                     slivers: <Widget>[
@@ -55,26 +56,14 @@ class _TopStoryCardState extends State<TopStoryCard> {
                         expandedHeight:
                             (MediaQuery.of(context).size.height - 350) / 1.5,
                         flexibleSpace: FlexibleSpaceBar(
-                          background: Stack(
-                            children: [
-                              Image.asset(
-                                'lib/assets/random2.jpg',
-                                fit: BoxFit.cover,
-                              ),
-                              Positioned(
-                                top: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  height: (MediaQuery.of(context).size.height -
-                                          350) /
-                                      1.5,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.75,
-                                  color: Colors.black.withOpacity(0.2),
-                                ),
-                              ),
-                            ],
+                          background: Hero(
+                            tag: "storyImage${index}",
+                            child: Image.asset(
+                              'lib/assets/random1.jpg',
+                              fit: BoxFit.cover,
+                              width:
+                                  MediaQuery.of(context).size.width * 0.8,
+                            ),
                           ),
                         ),
                       ),
