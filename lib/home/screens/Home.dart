@@ -100,7 +100,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height - 300,
+                height: MediaQuery.of(context).size.height - 270,
                 width: MediaQuery.of(context).size.width,
                 child: ListView(
                   scrollDirection: Axis.horizontal,

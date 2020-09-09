@@ -11,5 +11,6 @@ const blueLg = Color(0xFF1B263B);
 const darkBlue = Color(0xFF0D1B2A);
 const grey = Color(0xFFE0E1DD);
 const greyDark = Color(0xFFc1c3bb);
-const contentText = Color(0xFF8b8e80);
+const contentText = Color(0xFF9c9c9c);
 const accentColor = Color(0xFFff7f11);
+const blueBg = Color(0xFFe2eaf3);
